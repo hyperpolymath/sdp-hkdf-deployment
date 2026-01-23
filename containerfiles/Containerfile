@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: PMLP-1.0-or-later
+FROM ghcr.io/hyperpolymath/cerro-torre:latest
+
+COPY hkdf.wasm /app/
+COPY libhkdf.a /app/
+
+EXPOSE 8080
+WORKDIR /app
+
+ENTRYPOINT ["wasmtime", "serve", "--dir=preopen:/app", "/app/hkdf.wasm"]

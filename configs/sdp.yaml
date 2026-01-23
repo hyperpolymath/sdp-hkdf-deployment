@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: PMLP-1.0-or-later
+# SDP configuration for HKDF service
+service:
+  name: hkdf-service
+  port: 8080
+  protocol: wasm-http
+  
+security:
+  - selinux
+  - apparmor
+  - svalinn
+  - vordr
+
+networking:
+  - openziti
+  - netmaker
+  - bgp
+  - odns
