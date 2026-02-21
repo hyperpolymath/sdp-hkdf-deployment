@@ -1,18 +1,23 @@
 # SPDX-License-Identifier: PMPL-1.0-or-later
-# SDP configuration for HKDF service
+# SDP Configuration — HKDF Cryptographic Service.
+#
+# This file defines the operational environment for the 
+# Hierarchical Deterministic Key Derivation (HKDF) service.
+
 service:
   name: hkdf-service
   port: 8080
-  protocol: wasm-http
+  protocol: wasm-http # Runtime: Sandboxed WASM-over-HTTP
   
+# SECURITY STACK: Authoritative hardening layers.
 security:
-  - selinux
-  - apparmor
-  - svalinn
-  - vordr
+  - selinux   # Kernel-level mandatory access control.
+  - apparmor  # Profile-based program restriction.
+  - svalinn   # High-assurance authentication kernel.
+  - vordr     # Real-time state verification.
 
+# NETWORKING: Defined overlays for secure propagation.
 networking:
-  - openziti
-  - netmaker
-  - bgp
-  - odns
+  - openziti  # Zero-trust overlay network.
+  - bgp       # Border Gateway Protocol for site-to-site routing.
+  - odns      # Oblivious DNS for privacy-preserving discovery.

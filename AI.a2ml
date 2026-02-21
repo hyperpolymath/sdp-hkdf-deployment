@@ -1,15 +1,17 @@
+# AI Agent Specification — SDP-HKDF-Deployment
+#
+# This file defines the formal operating parameters for AI agents 
+# managing the Secure Deployment Protocol (SDP) infrastructure.
 
-# AI Assistant Instructions
+# GOAL: Automate the deployment of HKDF-based cryptographic silos while 
+# maintaining strict air-gap readiness and provenance tracking.
 
-## Repository Focus
-- `rsr-template-repo` is treated as a Rhodium Standard Repository; obey the Rhodium policies, maintain `.bot_directives`, and keep `.machines_readable/6scm/` authoritative.
-- Prefer to keep generated files out of source control, and regenerate them with the documented commands before committing.
+# CONSTRAINTS:
+# 1. NO SECRETS: Never commit raw key material or tokens.
+# 2. PROVENANCE: Every deployment artifact must carry a valid SPDX header.
+# 3. REVERSIBILITY: All deployment actions must have a corresponding rollback recipe.
 
-## Workflow
-1. Inspect `.machines_readable/6scm/STATE.scm` for blockers and next actions.
-2. Respect any constraints listed inside `.machines_readable/6scm/AGENTIC.scm` when tooling changes are requested.
-3. After finishing edits, update STATE with your outcomes and commit with a concise, imperative message.
-
-## Delivery Promises
-- Mention in summaries whether STATE, `contractiles/`, or `.bot_directives/` changed.
-- Keep this file in sync with the repository’s status; update it if the governance changes.
+# REPOSITORY STRUCTURE:
+# - configs/: Declarative Nickel environments.
+# - containerfiles/: Hardened OCI image definitions.
+# - contractiles/: Formal deployment contracts (K9).
