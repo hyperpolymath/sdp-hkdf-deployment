@@ -1,22 +1,28 @@
 // SPDX-License-Identifier: PMPL-1.0-or-later
-= YOUR Template Repo Roadmap
+= SDP HKDF Deployment Roadmap
 
 == Current Status
 
-Initial development phase.
+Initial development phase. Rootless/SDP deployment infrastructure for HKDF
+cryptographic services under construction.
 
 == Milestones
 
 === v0.1.0 - Foundation
-* [ ] Core functionality
-* [ ] Basic documentation
-* [ ] CI/CD pipeline
+* [ ] HKDF configuration parameters defined
+* [ ] Containerfile hardened for rootless execution
+* [ ] SDP perimeter enforcement policies
+
+=== v0.2.0 - Integration
+* [ ] Integration with svalinn authentication kernel
+* [ ] Integration with vordr state verification
+* [ ] OpenZiti zero-trust overlay setup
 
 === v1.0.0 - Stable Release
-* [ ] Full feature set
-* [ ] Comprehensive tests
-* [ ] Production ready
+* [ ] Full HKDF service deployment pipeline
+* [ ] Comprehensive tests and validation
+* [ ] Production ready with air-gap support
 
 == Future Directions
 
-_To be determined based on community feedback._
+_To be determined based on deployment requirements and security audits._

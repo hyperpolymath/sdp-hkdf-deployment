@@ -1,12 +1,19 @@
+// SPDX-License-Identifier: PMPL-1.0-or-later
 = SDP HKDF Deployment
 
 Rootless/SDP deployment for HKDF cryptographic services.
 
-== License
-
-PMLP-1.0-or-later
-
+This repository provides the infrastructure for deploying HKDF (HMAC-based
+Key Derivation Function) cryptographic services using the Secure Deployment
+Protocol (SDP) with rootless container execution, air-gap readiness, and
+provenance tracking.
 
 == Architecture
 
 See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion dashboard.
+
+== License
+
+PMPL-1.0-or-later (Palimpsest-MPL License)
+
+Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath)

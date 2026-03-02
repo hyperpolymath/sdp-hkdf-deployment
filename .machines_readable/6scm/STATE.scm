@@ -1,26 +1,29 @@
-;; SPDX-License-Identifier: AGPL-3.0-or-later
-;; STATE.scm - Project state tracking for rsr-template-repo
+;; SPDX-License-Identifier: PMPL-1.0-or-later
+;; STATE.scm - Project state tracking for sdp-hkdf-deployment
 ;; Media-Type: application/vnd.state+scm
 
-(define-state rsr-template-repo
+(define-state sdp-hkdf-deployment
   (metadata
     (version "0.1.0")
     (schema-version "1.0.0")
-    (created "2026-01-30")
-    (updated "2026-01-30")
-    (project "rsr-template-repo")
-    (repo "hyperpolymath/rsr-template-repo"))
+    (created "2026-02-19")
+    (updated "2026-03-02")
+    (project "sdp-hkdf-deployment")
+    (repo "hyperpolymath/sdp-hkdf-deployment"))
 
   (project-context
-    (name "rsr-template-repo")
-    (tagline "Hyperpolymath ecosystem project")
-    (tech-stack ()))
+    (name "sdp-hkdf-deployment")
+    (tagline "Rootless/SDP deployment for HKDF cryptographic services")
+    (tech-stack ("containerfiles" "nickel" "yaml" "haskell")))
 
   (current-position
-    (phase "initialization")
-    (overall-completion 5)
+    (phase "incubation")
+    (overall-completion 20)
     (components ())
-    (working-features ()))
+    (working-features
+      ("RSR compliance structure"
+       "Container definition stubs"
+       "SDP configuration")))
 
   (route-to-mvp
     (milestones
@@ -30,8 +33,8 @@
        (items
          ("Initialize repository structure" . done)
          ("Add standard workflows" . done)
-         ("Define project scope" . todo)
-         ("Set up development environment" . todo)))))
+         ("Define HKDF service parameters" . todo)
+         ("Harden Containerfile" . todo)))))
 
   (blockers-and-issues
     (critical ())
@@ -41,14 +44,12 @@
 
   (critical-next-actions
     (immediate
-      "Define project scope and objectives"
-      "Update README.adoc with project description")
+      "Define HKDF service parameters"
+      "Harden Containerfile for rootless execution")
     (this-week
-      "Set up development environment"
-      "Create initial architecture design")
+      "Integrate svalinn and vordr")
     (this-month
-      "Implement core functionality"
-      "Add comprehensive tests"))
+      "Deploy HKDF service with SDP enforcement"))
 
   (session-history ()))
 

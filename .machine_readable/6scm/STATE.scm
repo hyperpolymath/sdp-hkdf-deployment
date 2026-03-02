@@ -1,26 +1,29 @@
 ;; SPDX-License-Identifier: PMPL-1.0-or-later
-;; STATE.scm - Project state for rsr-template-repo
+;; STATE.scm - Project state for sdp-hkdf-deployment
 ;; Media-Type: application/vnd.state+scm
 
 (state
   (metadata
-    (version "0.0.1")
+    (version "0.1.0")
     (schema-version "1.0")
-    (created "2026-01-03")
-    (updated "2026-01-03")
-    (project "rsr-template-repo")
-    (repo "github.com/hyperpolymath/rsr-template-repo"))
+    (created "2026-02-19")
+    (updated "2026-03-02")
+    (project "sdp-hkdf-deployment")
+    (repo "github.com/hyperpolymath/sdp-hkdf-deployment"))
 
   (project-context
-    (name "rsr-template-repo")
-    (tagline "")
-    (tech-stack ()))
+    (name "sdp-hkdf-deployment")
+    (tagline "Rootless/SDP deployment for HKDF cryptographic services")
+    (tech-stack ("containerfiles" "nickel" "yaml" "haskell")))
 
   (current-position
-    (phase "initial")
-    (overall-completion 0)
+    (phase "incubation")
+    (overall-completion 20)
     (components ())
-    (working-features ()))
+    (working-features
+      ("RSR compliance structure"
+       "Container definition stubs"
+       "SDP configuration")))
 
   (route-to-mvp
     (milestones ()))

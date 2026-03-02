@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Security contact information for sdp-hkdf-deployment
+# See: https://securitytxt.org/
+
+Contact: mailto:j.d.a.jewell@open.ac.uk
+Contact: https://github.com/hyperpolymath/sdp-hkdf-deployment/security/advisories/new
+Expires: 2027-03-02T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://github.com/hyperpolymath/sdp-hkdf-deployment/.well-known/security.txt
+Policy: https://github.com/hyperpolymath/sdp-hkdf-deployment/blob/main/SECURITY.md

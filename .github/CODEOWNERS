@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# CODEOWNERS for sdp-hkdf-deployment
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for all files
+* @hyperpolymath
+
+# Security-critical files require explicit review
+SECURITY.md @hyperpolymath
+.github/workflows/ @hyperpolymath
+containerfiles/ @hyperpolymath
+configs/ @hyperpolymath
+contractiles/trust/ @hyperpolymath

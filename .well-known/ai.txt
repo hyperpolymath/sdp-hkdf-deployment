@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# ai.txt for sdp-hkdf-deployment
+# AI agent interaction preferences
+# See: https://github.com/nichochar/ai.txt
+
+# This repository welcomes AI-assisted contributions.
+# AI agents should read 0-AI-MANIFEST.a2ml or AI.a2ml first.
+
+User-agent: *
+Allow: /
+
+# AI manifest location
+AI-Manifest: /AI.a2ml
+
+# Machine-readable metadata
+Machine-Readable: /.machine_readable/
+
+# License: PMPL-1.0-or-later
+# Author: Jonathan D.A. Jewell (hyperpolymath)

@@ -6,6 +6,7 @@ labels: 'enhancement, priority: unset, triage'
 assignees: ''
 
 ---
+<!-- SPDX-License-Identifier: PMPL-1.0-or-later -->
 
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]

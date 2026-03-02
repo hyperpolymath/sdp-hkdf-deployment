@@ -1,46 +1,42 @@
-;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; SPDX-License-Identifier: PMPL-1.0-or-later
 ;; META.scm - Architectural decisions and project meta-information
 ;; Media-Type: application/meta+scheme
 
-(define-meta rsr-template-repo
+(define-meta sdp-hkdf-deployment
   (version "1.0.0")
 
   (architecture-decisions
-    ;; ADR format: (adr-NNN status date context decision consequences)
-    ((adr-001 accepted "2026-01-30"
-      "Need to establish repository structure and standards"
-      "Adopt RSR (Rhodium Standard Repository) conventions from rsr-template-repo"
-      "Ensures consistency with 500+ repos in hyperpolymath ecosystem. "
-      "Enables automated quality enforcement via gitbot-fleet and Hypatia.")))
+    ((adr-001 accepted "2026-02-19"
+      "Need rootless container deployment for HKDF services"
+      "Use Podman/Nerdctl with SDP perimeter enforcement and air-gap readiness"
+      "Ensures security isolation without root privileges. "
+      "Integrates with svalinn, vordr, and cerro-torre base images.")))
 
   (development-practices
     (code-style
-      "Follow hyperpolymath language policy: "
-      "Prefer ReScript, Rust, Gleam, Elixir. "
-      "Avoid TypeScript, Go, Python per RSR.")
+      "Follow hyperpolymath language policy. "
+      "Containerfiles use Chainguard/wolfi-base images.")
     (security
-      "All commits signed. "
-      "Hypatia neurosymbolic scanning enabled. "
-      "OpenSSF Scorecard tracking.")
+      "All deployments rootless. "
+      "SDP perimeter enforcement mandatory. "
+      "Hypatia neurosymbolic scanning enabled.")
     (testing
-      "Comprehensive test coverage required. "
-      "CI/CD runs on all pushes.")
+      "Container image validation required. "
+      "Security scanning on all pushes.")
     (versioning
-      "Semantic versioning (semver). "
-      "Changelog maintained in CHANGELOG.md.")
+      "Semantic versioning (semver).")
     (documentation
       "README.adoc for overview. "
       "STATE.scm for current state. "
-      "ECOSYSTEM.scm for relationships.")
+      "TOPOLOGY.md for architecture.")
     (branching
       "Main branch protected. "
-      "Feature branches for new work. "
-      "PRs required for merges."))
+      "Feature branches for new work."))
 
   (design-rationale
-    (why-rsr
-      "RSR provides standardized structure across 500+ repos, "
-      "enabling automated tooling and consistent developer experience.")
-    (why-hypatia
-      "Neurosymbolic security scanning combines neural pattern recognition "
-      "with symbolic reasoning for fast, deterministic security checks.")))
+    (why-sdp
+      "Secure Deployment Protocol ensures rootless execution "
+      "with mandatory access control and zero-trust networking.")
+    (why-hkdf
+      "HKDF provides deterministic key derivation "
+      "critical for cryptographic service infrastructure.")))

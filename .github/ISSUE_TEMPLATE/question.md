@@ -6,6 +6,7 @@ labels: question, triage
 assignees: ''
 
 ---
+<!-- SPDX-License-Identifier: PMPL-1.0-or-later -->
 
 name: Question
 description: Ask a question about usage or behaviour
