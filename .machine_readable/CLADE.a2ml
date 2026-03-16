@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Clade declaration — part of the gv-clade-index registry
+# See: https://github.com/hyperpolymath/gv-clade-index
+
+[identity]
+uuid = "3be5d7e2-1dd3-531a-a2f8-393cac5aad6e"
+primary-forge = "github"
+primary-owner = "hyperpolymath"
+canonical-name = "sdp-hkdf-deployment"
+prefixed-name = "ix-sdp-hkdf-deployment"
+
+[clade]
+primary = "ix"
+secondary = ["sc"]
+assigned = "2026-03-16"
+rationale = ""
+
+[forges]
+github = "hyperpolymath/sdp-hkdf-deployment"
+gitlab = "hyperpolymath/sdp-hkdf-deployment"
+bitbucket = "hyperpolymath/sdp-hkdf-deployment"
+
+[lineage]
+type = "standalone"
+parent = "SDP HKDF deployment tooling"
+born = "2026-03-16"
