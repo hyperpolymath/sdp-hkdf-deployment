@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 # ai.txt for sdp-hkdf-deployment
 # AI agent interaction preferences
 # See: https://github.com/nichochar/ai.txt
@@ -15,5 +15,5 @@ AI-Manifest: /AI.a2ml
 # Machine-readable metadata
 Machine-Readable: /.machine_readable/
 
-# License: PMPL-1.0-or-later
+# License: MPL-2.0
 # Author: Jonathan D.A. Jewell (hyperpolymath)

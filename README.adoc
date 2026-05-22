@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 = SDP HKDF Deployment
 
 Rootless/SDP deployment for HKDF cryptographic services.
@@ -14,6 +14,6 @@ See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion d
 
 == License
 
-PMPL-1.0-or-later (Palimpsest-MPL License)
+MPL-2.0 (Palimpsest-MPL License)
 
 Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath)

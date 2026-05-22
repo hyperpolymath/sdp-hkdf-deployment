@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 = SDP HKDF Deployment - RSR Compliance Outline
 
 image:https://img.shields.io/badge/RSR-Infrastructure-cd7f32[RSR Infrastructure]
@@ -43,7 +43,7 @@ under the Secure Deployment Protocol (SDP) with rootless container execution.
 |Documentation directory
 
 |`LICENSE`
-|PMPL-1.0-or-later license
+|MPL-2.0 license
 
 |`README.adoc`
 |Project overview
@@ -59,7 +59,7 @@ under the Secure Deployment Protocol (SDP) with rootless container execution.
 * `.editorconfig`
 * `.gitignore`
 * `README.adoc`
-* `LICENSE` (PMPL-1.0-or-later)
+* `LICENSE` (MPL-2.0)
 * `.well-known/security.txt`
 * `.well-known/ai.txt`
 * `.well-known/humans.txt`
@@ -72,7 +72,7 @@ under the Secure Deployment Protocol (SDP) with rootless container execution.
 
 == License
 
-SPDX-License-Identifier: PMPL-1.0-or-later
+SPDX-License-Identifier: MPL-2.0
 
 == Links
 

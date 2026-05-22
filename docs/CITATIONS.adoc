@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 = SDP HKDF Deployment - Citation Guide
 :toc:
 
@@ -11,7 +11,7 @@
   title = {SDP HKDF Deployment},
   year = {2026},
   url = {https://github.com/hyperpolymath/sdp-hkdf-deployment},
-  license = {PMPL-1.0-or-later}
+  license = {MPL-2.0}
 }
 ----
 

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 # humans.txt for sdp-hkdf-deployment
 # See: https://humanstxt.org/
 
@@ -10,7 +10,7 @@ Email: j.d.a.jewell@open.ac.uk
 /* SITE */
 Repository: https://github.com/hyperpolymath/sdp-hkdf-deployment
 Standards: RSR (Rhodium Standard Repositories)
-License: PMPL-1.0-or-later
+License: MPL-2.0
 
 /* THANKS */
 The hyperpolymath community and contributors.
