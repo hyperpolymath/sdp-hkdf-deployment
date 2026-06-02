@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 // Template: QUICKSTART-USER.adoc — 5-minute path to working software
 // Replace sdp-hkdf-deployment, Sdp Hkdf Deployment — See README.adoc for details., just run, Sdp Hkdf Deployment started successfully. with actuals
 = sdp-hkdf-deployment — Quick Start for Users
