@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 = SDP HKDF Deployment
+image:https://img.shields.io/badge/OpenSSF-Best_Practices-green?logo=openssourcesecurity[OpenSSF Best Practices,link="https://www.bestpractices.dev/en/projects/new?repo_url=https://github.com/hyperpolymath/sdp-hkdf-deployment"]
+
+image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[License: MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
+
 
 Rootless/SDP deployment for HKDF cryptographic services.
 
@@ -14,6 +19,6 @@ See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion d
 
 == License
 
-MPL-2.0 (Palimpsest-MPL License)
+This project is licensed under the Mozilla Public License, v. 2.0. See the `LICENSE` file for details.
 
-Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath)
+SPDX-License-Identifier: MPL-2.0
