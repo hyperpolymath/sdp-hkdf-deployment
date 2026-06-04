@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 ---
 name: Bug report
 about: Create a report to help us improve
@@ -6,8 +10,6 @@ labels: 'bug, priority: unset, triage'
 assignees: ''
 
 ---
-<!-- SPDX-License-Identifier: MPL-2.0 -->
-
 **Describe the bug**
 A clear and concise description of what the bug is.
 

@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 ---
 name: Feature request
 about: Suggest an idea for this project
@@ -6,8 +10,6 @@ labels: 'enhancement, priority: unset, triage'
 assignees: ''
 
 ---
-<!-- SPDX-License-Identifier: MPL-2.0 -->
-
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 

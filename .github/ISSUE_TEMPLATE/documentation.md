@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 ---
 name: Documentation
 about: Report unclear, missing, or incorrect documentation
@@ -6,8 +10,6 @@ labels: 'documentation, priority: unset, triage'
 assignees: ''
 
 ---
-<!-- SPDX-License-Identifier: MPL-2.0 -->
-
 name: Documentation
 description: Report unclear, missing, or incorrect documentation
 title: "[Docs]: "
