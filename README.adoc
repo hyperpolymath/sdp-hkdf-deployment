@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: CC-BY-SA-4.0
 = SDP HKDF Deployment
 :author: Jonathan D.A. Jewell <6759885+hyperpolymath@users.noreply.github.com>
 :revdate: 2026-05-26
