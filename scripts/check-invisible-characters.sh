@@ -25,7 +25,7 @@ fi
 scan_error=0
 enumeration_file="$(mktemp /tmp/rsr-invisible-files.XXXXXX)" || exit 2
 # Invoked indirectly by the EXIT trap.
-# shellcheck disable=SC2329
+# cleanup removes the temporary file used for file enumeration.
 cleanup() {
   rm -f -- "$enumeration_file"
 }

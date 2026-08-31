@@ -4,6 +4,7 @@ set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 fixture_root="$(mktemp -d /tmp/rsr-invisible-test.XXXXXX)"
+# cleanup removes the temporary test fixture directory when its path matches the expected location, and reports unsafe paths without removing them.
 cleanup() {
   case "$fixture_root" in
     /tmp/rsr-invisible-test.*) rm -rf -- "$fixture_root" ;;
