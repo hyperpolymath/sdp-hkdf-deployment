@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: MPL-2.0
-# Byte-safe scanner for invisible Unicode encodings and forbidden C0 controls.
+# Scanner for invisible Unicode codepoints and forbidden C0 control bytes.
 set -u
 
 scan_root="${1:-}"
@@ -8,15 +8,16 @@ results_file="${2:-}"
 blocking_results_file="${3:-}"
 grep_bin="${INVISIBLE_GREP_BIN:-grep}"
 find_bin="${INVISIBLE_FIND_BIN:-find}"
+od_bin="${INVISIBLE_OD_BIN:-od}"
 
 if [[ -z "$scan_root" || ! -d "$scan_root" || -z "$results_file" ]]; then
   echo "usage: $0 SCAN_ROOT RESULTS_FILE" >&2
   exit 2
 fi
 
-# Scan bytes under the C locale. This detects UTF-8 encodings even when another
-# byte in the file is invalid UTF-8, while excluding permitted TAB/LF/CR bytes.
-pattern='[\x00-\x08\x0B\x0C\x0E-\x1F]|\xC2(?:\xA0|\xAD)|\xE2\x80[\x8B-\x8F\xAA-\xAF]|\xE2\x81(?:\xA0|[\xA6-\xA9])|\xEF\xBB\xBF'
+# grep -P matches Unicode characters, so multi-byte UTF-8 encodings must be
+# expressed as codepoints. The C0 class deliberately excludes TAB, LF, and CR.
+pattern='[\x00-\x08\x0B\x0C\x0E-\x1F]|\x{a0}|\x{ad}|[\x{200b}-\x{200f}]|[\x{202a}-\x{202f}]|\x{2060}|[\x{2066}-\x{2069}]|\x{feff}'
 blocking_pattern='[\x00-\x08\x0B\x0C\x0E-\x1F]'
 : > "$results_file" || exit 2
 if [[ -n "$blocking_results_file" ]]; then
@@ -47,24 +48,40 @@ if ! "$find_bin" "$scan_root" \
 fi
 
 while IFS= read -r -d '' filepath; do
-  LC_ALL=C "$grep_bin" -aPq "$pattern" "$filepath"
-  status=$?
-  case "$status" in
-    0)
-      printf '%s\0' "$filepath" >> "$results_file" || scan_error=1
-      if [[ -n "$blocking_results_file" ]]; then
-        LC_ALL=C "$grep_bin" -aPq "$blocking_pattern" "$filepath"
-        blocking_status=$?
-        case "$blocking_status" in
-          0) printf '%s\0' "$filepath" >> "$blocking_results_file" || scan_error=1 ;;
-          1) ;;
-          *) echo "blocking-classifier error ($blocking_status): $filepath" >&2; scan_error=1 ;;
-        esac
-      fi
-      ;;
+  matched=false
+
+  LC_ALL=C.UTF-8 "$grep_bin" -aPq "$pattern" "$filepath"
+  unicode_status=$?
+  case "$unicode_status" in
+    0) matched=true ;;
     1) ;;
-    *) echo "scanner error ($status): $filepath" >&2; scan_error=1 ;;
+    *) echo "scanner error ($unicode_status): $filepath" >&2; scan_error=1 ;;
   esac
+
+  # Check the first three bytes independently. This keeps leading-BOM
+  # detection explicit instead of relying on Unicode matching behaviour.
+  leading_bytes="$(LC_ALL=C "$od_bin" -An -tx1 -N3 -- "$filepath" 2>/dev/null)"
+  byte_status=$?
+  if [[ "$byte_status" -ne 0 ]]; then
+    echo "leading-BOM scanner error ($byte_status): $filepath" >&2
+    scan_error=1
+  else
+    leading_bytes="${leading_bytes//[[:space:]]/}"
+    [[ "$leading_bytes" == "efbbbf" ]] && matched=true
+  fi
+
+  if [[ "$matched" == true ]]; then
+    printf '%s\0' "$filepath" >> "$results_file" || scan_error=1
+    if [[ -n "$blocking_results_file" ]]; then
+      LC_ALL=C.UTF-8 "$grep_bin" -aPq "$blocking_pattern" "$filepath"
+      blocking_status=$?
+      case "$blocking_status" in
+        0) printf '%s\0' "$filepath" >> "$blocking_results_file" || scan_error=1 ;;
+        1) ;;
+        *) echo "blocking-classifier error ($blocking_status): $filepath" >&2; scan_error=1 ;;
+      esac
+    fi
+  fi
 done < "$enumeration_file"
 
 exit "$scan_error"
