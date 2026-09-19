@@ -62,7 +62,7 @@ link:docs/THREAT-MODEL.adoc[`docs/THREAT-MODEL.adoc`] if present.
 
 == Contributing
 
-See link:CONTRIBUTING.md[CONTRIBUTING.md]. GPG-signed commits required.
+See link:.github/CONTRIBUTING.md[CONTRIBUTING.md]. GPG-signed commits required.
 
 == Companion repositories
 
