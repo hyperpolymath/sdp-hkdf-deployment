@@ -67,7 +67,7 @@ under the Secure Deployment Protocol (SDP) with rootless container execution.
 === Prohibited
 
 * `Dockerfile` (use `Containerfile`)
-* TypeScript/JavaScript (use ReScript)
+* TypeScript/JavaScript (use AffineScript)
 * Python outside `salt/` directory
 
 == License
